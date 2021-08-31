@@ -1,0 +1,3 @@
+<input placeholder="Enter ANY keyword" class="searchInput"/>
+<div class="loading">Loading...</div>
+<div class="wrapper"></div>
