@@ -1,0 +1,233 @@
+<form action="" method="POST">
+Enter Search Query: 
+<input type="text" name="search_entered" value=''/> <br><br>
+ 
+<input type="submit" name="submit" value="Search"/><br><br>
+</form>
+<?php
+
+$search= $_POST['search_entered'];
+
+$searchoriginal= $search;
+
+$search= strtolower($search);
+
+$search= trim($search);
+
+
+
+$search= explode(" ", $search);
+
+$countsearchterms= count($search);
+
+$submitbutton= $_POST['submit'];
+
+?>
+<?php
+
+$directory = "images/";
+
+
+if ($submitbutton){
+if (!empty($searchoriginal)) 
+{
+if (is_dir($directory)){
+
+  if ($open = opendir($directory)){
+if ($countsearchterms == 1)
+{
+    while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+	
+      if ((strpos("$file",  "$search[0]") !== false) && (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	 echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+
+    }
+}
+else if ($countsearchterms == 2) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false)) && (($fileextension == "jpg") 
+|| ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp"))) {
+	$array[] += "$file";
+	 echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+ 
+	
+    }
+    
+
+}
+
+else if ($countsearchterms == 3) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false) && (strpos("$file",  "$search[2]") !== false)) 
+&& (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	 echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+ 
+	
+    }
+    
+
+}
+
+else if ($countsearchterms == 4) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false) && (strpos("$file",  "$search[2]") !== false)&& (strpos("$file",  "$search[3]") !== false))
+&& (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+ 
+	
+    }
+    
+
+}
+
+else if ($countsearchterms == 5) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false) && (strpos("$file",  "$search[2]") !== false)&& (strpos("$file",  "$search[3]") !== false)
+&& (strpos("$file",  "$search[4]") !== false)) && (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+}  
+}
+else if ($countsearchterms == 6) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+	
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false) && (strpos("$file",  "$search[2]") !== false)&& (strpos("$file",  "$search[3]") !== false)
+&& (strpos("$file",  "$search[4]") !== false) && (strpos("$file",  "$search[5]") !== false)) && (($fileextension == "jpg") || ($fileextension == "jpeg") 
+|| ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+}  
+}
+else if ($countsearchterms == 7) {
+while (($file = readdir($open)) !== false){
+	$fileoriginal= $file;
+	$file= strtolower($file);
+	$position= strpos("$file", ".");
+	$fileextension= substr($file, $position + 1);
+	$fileextension= strtolower($fileextension);
+
+      if (((strpos("$file",  "$search[0]") !== false) && (strpos("$file",  "$search[1]") !== false) && (strpos("$file",  "$search[2]") !== false)&& (strpos("$file",  "$search[3]") !== false)
+&& (strpos("$file",  "$search[4]") !== false) && (strpos("$file",  "$search[5]") !== false) && (strpos("$file",  "$search[6]") !== false))
+&& (($fileextension == "jpg") || ($fileextension == "jpeg") || ($fileextension == "png") || ($fileextension == "bmp")))
+	{
+	$array[] += "$file";
+	echo "<img style='width: 200px;' src='/images/$fileoriginal'>". "<br><br><hr>";
+}
+}  
+}
+closedir($open);
+    }
+
+  }//while loop
+
+$arraycount= count($array);
+
+if ($arraycount == 0)
+{
+echo "No results for this search entered";
+}
+}
+}
+?>
+
+<?php
+
+$url = 'https://pixabay.com/';
+$data = [
+	'collection' => '23160889-a9bf5421864b61c46d34feca1'
+];
+
+$curl = curl_init($url);
+
+function APIcall($method, $url, $data) {
+	$curl = curl_init();
+	
+	switch ($method) {
+		case "POST":
+			curl_setopt($curl, CURLOPT_POST, 1);
+			if ($data)
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+			break;
+		case "PUT":
+			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+			if ($data)
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+			break;
+	}
+	
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+		'APIKEY: RegisteredAPIkey',
+		'Content-Type: application/json',
+	));
+	
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+	$result = curl_exec($curl);
+	
+	if(!$result) {
+		echo("Connection failure!");
+	}
+	curl_close($curl);
+	return $result;
+}
+?>
+
+
+
+
+
